@@ -1,0 +1,14 @@
+C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\obj\Debug\net8.0\LibrayManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\obj\Debug\net8.0\LibrayManagementSystem.AssemblyInfoInputs.cache
+C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\obj\Debug\net8.0\LibrayManagementSystem.AssemblyInfo.cs
+C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\obj\Debug\net8.0\LibrayManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\bin\Debug\net8.0\LibrayManagementSystem.exe
+C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\bin\Debug\net8.0\LibrayManagementSystem.deps.json
+C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\bin\Debug\net8.0\LibrayManagementSystem.runtimeconfig.json
+C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\bin\Debug\net8.0\LibrayManagementSystem.dll
+C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\bin\Debug\net8.0\LibrayManagementSystem.pdb
+C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\obj\Debug\net8.0\LibrayManagementSystem.dll
+C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\obj\Debug\net8.0\refint\LibrayManagementSystem.dll
+C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\obj\Debug\net8.0\LibrayManagementSystem.pdb
+C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\obj\Debug\net8.0\LibrayManagementSystem.genruntimeconfig.cache
+C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\obj\Debug\net8.0\ref\LibrayManagementSystem.dll
