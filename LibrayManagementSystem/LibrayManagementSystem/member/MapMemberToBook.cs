@@ -45,9 +45,4 @@ namespace LibrayManagementSystem.member
         }
 
     }
-
-/*
- * private List<int> list;
- * 
- */
 }
