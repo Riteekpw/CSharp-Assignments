@@ -1,0 +1,14 @@
+# Ignore Visual Studio specific files
+.vs/
+.vscode/
+
+# Ignore build results
+bin/
+obj/
+
+# Ignore other files that should not be versioned
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
