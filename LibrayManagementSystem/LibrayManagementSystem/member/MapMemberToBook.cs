@@ -7,7 +7,7 @@ using LibraryManagementSystem.book;
 
 namespace LibrayManagementSystem.member
 {
-    class MapMemberToBook
+    class MapMemberToBook : IMapMember
     {
         private Dictionary<int, List<int>> map;
         private List<int> list;
@@ -26,7 +26,8 @@ namespace LibrayManagementSystem.member
         }
         public void RemoveMapping(int memberId,int bookId)
         {
-            if(map.ContainsKey(memberId)){
+            if(map.ContainsKey(memberId))
+            {
                 foreach(var id in map[memberId])
                 {
                     if (id == bookId)

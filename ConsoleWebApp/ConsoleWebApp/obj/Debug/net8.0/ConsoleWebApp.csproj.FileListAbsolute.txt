@@ -1,0 +1,15 @@
+C:\Users\riteekc\source\repos\ConsoleWebApp\ConsoleWebApp\bin\Debug\net8.0\ConsoleWebApp.exe
+C:\Users\riteekc\source\repos\ConsoleWebApp\ConsoleWebApp\bin\Debug\net8.0\ConsoleWebApp.deps.json
+C:\Users\riteekc\source\repos\ConsoleWebApp\ConsoleWebApp\bin\Debug\net8.0\ConsoleWebApp.runtimeconfig.json
+C:\Users\riteekc\source\repos\ConsoleWebApp\ConsoleWebApp\bin\Debug\net8.0\ConsoleWebApp.dll
+C:\Users\riteekc\source\repos\ConsoleWebApp\ConsoleWebApp\bin\Debug\net8.0\ConsoleWebApp.pdb
+C:\Users\riteekc\source\repos\ConsoleWebApp\ConsoleWebApp\obj\Debug\net8.0\ConsoleWebApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\riteekc\source\repos\ConsoleWebApp\ConsoleWebApp\obj\Debug\net8.0\ConsoleWebApp.AssemblyInfoInputs.cache
+C:\Users\riteekc\source\repos\ConsoleWebApp\ConsoleWebApp\obj\Debug\net8.0\ConsoleWebApp.AssemblyInfo.cs
+C:\Users\riteekc\source\repos\ConsoleWebApp\ConsoleWebApp\obj\Debug\net8.0\ConsoleWebApp.csproj.CoreCompileInputs.cache
+C:\Users\riteekc\source\repos\ConsoleWebApp\ConsoleWebApp\obj\Debug\net8.0\ConsoleWebApp.dll
+C:\Users\riteekc\source\repos\ConsoleWebApp\ConsoleWebApp\obj\Debug\net8.0\refint\ConsoleWebApp.dll
+C:\Users\riteekc\source\repos\ConsoleWebApp\ConsoleWebApp\obj\Debug\net8.0\ConsoleWebApp.pdb
+C:\Users\riteekc\source\repos\ConsoleWebApp\ConsoleWebApp\obj\Debug\net8.0\ConsoleWebApp.genruntimeconfig.cache
+C:\Users\riteekc\source\repos\ConsoleWebApp\ConsoleWebApp\obj\Debug\net8.0\ref\ConsoleWebApp.dll
+C:\Users\riteekc\source\repos\ConsoleWebApp\ConsoleWebApp\obj\Debug\net8.0\ConsoleWebApp.sourcelink.json

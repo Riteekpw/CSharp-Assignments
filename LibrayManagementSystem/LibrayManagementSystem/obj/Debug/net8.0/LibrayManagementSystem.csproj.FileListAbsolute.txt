@@ -12,3 +12,4 @@ C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\obj\
 C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\obj\Debug\net8.0\LibrayManagementSystem.pdb
 C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\obj\Debug\net8.0\LibrayManagementSystem.genruntimeconfig.cache
 C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\obj\Debug\net8.0\ref\LibrayManagementSystem.dll
+C:\Users\riteekc\source\repos\LibrayManagementSystem\LibrayManagementSystem\obj\Debug\net8.0\LibrayManagementSystem.sourcelink.json
