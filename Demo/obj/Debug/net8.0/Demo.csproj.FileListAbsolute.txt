@@ -1,6 +1,0 @@
-C:\Users\riteekc\source\repos\Demo\obj\Debug\net8.0\Demo.csproj.AssemblyReference.cache
-C:\Users\riteekc\source\repos\Demo\obj\Debug\net8.0\Demo.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\riteekc\source\repos\Demo\obj\Debug\net8.0\Demo.AssemblyInfoInputs.cache
-C:\Users\riteekc\source\repos\Demo\obj\Debug\net8.0\Demo.AssemblyInfo.cs
-C:\Users\riteekc\source\repos\Demo\obj\Debug\net8.0\Demo.csproj.CoreCompileInputs.cache
-C:\Users\riteekc\source\repos\Demo\obj\Debug\net8.0\Demo.sourcelink.json

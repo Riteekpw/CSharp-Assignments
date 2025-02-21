@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LibrayManagementSystem.model;
 
 namespace LibraryManagementSystem.book
 {
-    class Book 
+    class Book
     {
         private int bookId;
         private string title;
         private string author;
         private string isbn;
         private bool available;
-        private int rating;
-        private string isEbook;
+
         public int BookId
         {
             get { return bookId; }
@@ -44,26 +42,14 @@ namespace LibraryManagementSystem.book
             get { return available; }
             set { available = value; }
         }
-        public int Rating
-        {
-            get { return rating; }
-            set { rating = value; }
-        }
-        public string IsEbook
-        {
-            get { return isEbook; }
-            set { isEbook = value; }
-        }
 
-        public Book(int bookId,string title, string author, string isbn,int rating,string isEbook)
+        public Book(int bookId,string title, string author, string isbn)
         {  
             this.bookId = bookId;
             this.title = title;
             this.author = author;
             this.isbn = isbn;
             this.available = true;
-            this.rating = rating;
-            this.isEbook = isEbook;
         }
 
 

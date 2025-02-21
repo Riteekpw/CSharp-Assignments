@@ -10,9 +10,9 @@ class Program
         Library library = new Library();
 
 
-        Book book1 = new Book(111,"The Alchemist", "Paulo Coelho", "978-0061122415",4,"False");
-        Book book2 = new Book(112,"1984", "George Orwell", "978-0451524935",5,"False");
-        EBook ebook = new EBook(113,"Digital Fortress", "Dan Brown", "978-0312944926",3,"True", 2.5, "PDF");
+        Book book1 = new Book(111,"The Alchemist", "Paulo Coelho", "978-0061122415");
+        Book book2 = new Book(112,"1984", "George Orwell", "978-0451524935");
+        EBook ebook = new EBook(113,"Digital Fortress", "Dan Brown", "978-0312944926", 2.5, "PDF");
 
 
         library.AddBook(book1);
@@ -20,8 +20,8 @@ class Program
         library.AddBook(ebook);
 
 
-        Member member1 = new Member("Alice", 101,21);
-        Member member2 = new Member("Bob", 102,22);
+        Member member1 = new Member("Alice", 101);
+        Member member2 = new Member("Bob", 102);
 
 
         library.RegisterMember(member1);

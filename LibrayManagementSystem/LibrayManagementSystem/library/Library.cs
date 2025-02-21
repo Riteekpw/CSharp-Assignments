@@ -14,20 +14,8 @@ namespace LibraryManagementSystem.library
 {
     private List<Book> books;
     private List<Member> members;
-
-    public List<Book> Books
-    {
-         set { books = value; }
-         get { return books; }
-    }
-
-    public List<Member> Members
-    {
-         set { Members = value; }
-         get { return Members; }
-    }
-
-        public Library()
+ 
+    public Library()
     {
         books = new List<Book>();
         members = new List<Member>();

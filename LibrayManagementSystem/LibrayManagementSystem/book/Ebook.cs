@@ -24,8 +24,9 @@ namespace LibraryManagementSystem.book
             set { format = value; }
         }
 
-        public EBook(int bookId,string title, string author, string isbn,int rating, double fileSize, string format,string isEbook)
-            : base(bookId,title, author, isbn,rating,isEbook)
+
+        public EBook(int bookId,string title, string author, string isbn, double fileSize, string format)
+            : base(bookId,title, author, isbn)
         {
             this.fileSize = fileSize;
             this.format = format;
