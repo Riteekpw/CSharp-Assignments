@@ -14,7 +14,7 @@ namespace LibraryManagementSystem.member
     class Member : Person
     {
         private int memberId;
-        MapMemberToBook mapMemberToBook;
+        private     IMapMember mapMemberToBook;
     
 
         public int MemberId
@@ -25,7 +25,7 @@ namespace LibraryManagementSystem.member
 
     
 
-        public Member(string name, int memberId) : base(name)
+        public Member(string name, int memberId,int age) : base(name ,age)
         {
             this.memberId = memberId;
             this.mapMemberToBook = new MapMemberToBook();
