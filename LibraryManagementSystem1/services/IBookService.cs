@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem1.services
 {
-    public interface IBookService : IService
+    public interface IBookService 
     {
         void AddBook(string title, string author, string isbn);
         void AddEBook(string title, string author, string isbn, int fileSize, string fileFormat);

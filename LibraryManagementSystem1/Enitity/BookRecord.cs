@@ -5,20 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibrayManagementSystem1.model
+namespace LibraryManagementSystem1.Enitity
 {
-    public class MemberBook
+     class BookRecord
     {
         [Key]
-        public int MappingId { get; set; }
-        public int MemberId { get; set; }
-        public int BookId { get; set; }
+        public int TransactionId { get; set; }
+
+        public int LibrarianId { get; set; }
         public DateTime BorrowedOn { get; set; } = DateTime.Now;
         public DateTime ReturnedOn { get; set; }
         public string BookStatus { get; set; } = "issued";
-        public virtual Member Member { get; set; }
-        public virtual Book Book { get; set; }
-    
+        public int MappingId { get; set; }
     }
-
 }
