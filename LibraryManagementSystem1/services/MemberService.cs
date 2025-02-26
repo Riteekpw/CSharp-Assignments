@@ -12,12 +12,18 @@ namespace LibraryManagementSystem1.services
     public class MemberService : IMemberService
     {
         private  IMemberRepository memberRepository;
-        private  LibraryDbContext context;
+        private  LibraryDbContext _context;
+        private IMemberRepository @object;
 
         public MemberService()
         {
-            context = new LibraryDbContext();
-            memberRepository = new MemberRepository(context);
+            _context = new LibraryDbContext();
+            memberRepository = new MemberRepository(_context);
+        }
+
+        public MemberService(IMemberRepository @object)
+        {
+            this.@object = @object;
         }
 
         public void RegisterMember(string name, int age)

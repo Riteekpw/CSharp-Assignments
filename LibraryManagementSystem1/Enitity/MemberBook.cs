@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibrayManagementSystem1.model
+namespace LibraryManagementSystem1.Enitity
 {
-    public class MemberBook
+     class MemberBook
     {
         [Key]
         public int MappingId { get; set; }
@@ -15,10 +15,15 @@ namespace LibrayManagementSystem1.model
         public int BookId { get; set; }
         public DateTime BorrowedOn { get; set; } = DateTime.Now;
         public DateTime ReturnedOn { get; set; }
-        public string BookStatus { get; set; } = "issued";
+        public BookStatus Status { get; set; } = BookStatus.Issued;
+
         public virtual Member Member { get; set; }
         public virtual Book Book { get; set; }
-    
     }
+    public enum BookStatus
+    {
+        Issued,   
+        Returned
 
+    }
 }

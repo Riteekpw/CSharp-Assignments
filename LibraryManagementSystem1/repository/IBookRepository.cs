@@ -7,12 +7,12 @@ using LibrayManagementSystem1.model;
 
 namespace LibraryManagementSystem1.repository
 {
-     interface IBookRepository
+     public interface IBookRepository
     {
-        void Add(Book book);
-        Book FindById(int bookId);
-        IEnumerable<Book> GetAll();
+        Task AddAsync(Book book);
+        Task<Book> FindByIdAsync(int bookId);
+        Task<IEnumerable<Book>> GetAllAsync();
         void Update(Book book);
-        void SaveChanges();
+        Task SaveChangesAsync();
     }
 }

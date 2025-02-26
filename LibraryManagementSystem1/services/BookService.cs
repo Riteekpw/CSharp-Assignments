@@ -12,12 +12,17 @@ namespace LibraryManagementSystem1.services
     public class BookService : IBookService
     {
         private  IBookRepository bookRepository;
-        private  LibraryDbContext context;
+        private  LibraryDbContext _context;
 
         public BookService()
         {
-            context = new LibraryDbContext();
-            bookRepository = new BookRepository(context);
+            _context = new LibraryDbContext();
+            bookRepository = new BookRepository(_context);
+        }
+
+        public BookService(IBookRepository bookRepo)
+        {
+            bookRepository = bookRepo;
         }
 
         public void AddBook(string title, string author, string isbn)
@@ -59,8 +64,8 @@ namespace LibraryManagementSystem1.services
                 BookId = book.BookId
             };
 
-            context.Ebooks.Add(ebook);
-            context.SaveChanges();
+            _context.Ebooks.Add(ebook);
+            _context.SaveChanges();
             Console.WriteLine("EBook added successfully.");
         }
 

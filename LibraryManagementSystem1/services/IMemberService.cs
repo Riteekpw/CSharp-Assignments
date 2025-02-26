@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem1.services
 {
-    public interface IMemberService : IService
+    public interface IMemberService
     {
         void RegisterMember(string name, int age);
         void ListMembers();
