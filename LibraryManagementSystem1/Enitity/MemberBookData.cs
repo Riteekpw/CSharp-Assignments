@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem1.Enitity
 {
-     class MemberBook
+     class MemberBookData
     {
         [Key]
         public int MappingId { get; set; }
@@ -17,8 +17,8 @@ namespace LibraryManagementSystem1.Enitity
         public DateTime ReturnedOn { get; set; }
         public BookStatus Status { get; set; } = BookStatus.Issued;
 
-        public virtual Member Member { get; set; }
-        public virtual Book Book { get; set; }
+        public virtual MemberData Member { get; set; }
+        public virtual BookData Book { get; set; }
     }
     public enum BookStatus
     {

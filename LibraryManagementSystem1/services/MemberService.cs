@@ -26,7 +26,7 @@ namespace LibraryManagementSystem1.services
             this.@object = @object;
         }
 
-        public void RegisterMember(string name, int age)
+        public async Task RegisterMemberAsync(string name, int age)
         {
             var member = new Member
             {
@@ -35,14 +35,14 @@ namespace LibraryManagementSystem1.services
                 IsDeleted = false
             };
 
-            memberRepository.Add(member);
-            memberRepository.SaveChanges();
+            await memberRepository.AddAsync(member);
+            await memberRepository.SaveChangesAsync();
             Console.WriteLine($"Member '{member.Name}' registered with ID: {member.MemberId}");
         }
 
-        public void ListMembers()
+        public async Task ListMembersAsync()
         {
-            var members = memberRepository.GetAll().ToList();
+            var members = await memberRepository.GetAllAsync();
             Console.WriteLine("\nList of Members:");
             foreach (var member in members)
             {

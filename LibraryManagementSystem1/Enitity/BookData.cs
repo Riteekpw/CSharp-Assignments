@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem1.Enitity
 {
-     class Book
+     class BookData
     {
         public int BookId { get; set; }
         public string Title { get; set; }
@@ -14,6 +14,6 @@ namespace LibraryManagementSystem1.Enitity
         public string ISBN { get; set; }
         public int Rating { get; set; }
 
-        public virtual Ebook Ebook { get; set; }
+        public virtual EbookData Ebook { get; set; }
     }
 }

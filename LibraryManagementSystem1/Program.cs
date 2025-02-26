@@ -34,7 +34,7 @@ class Program
                     string author = Console.ReadLine();
                     Console.Write("Enter ISBN: ");
                     string isbn = Console.ReadLine();
-                    bookService.AddBook(title, author, isbn);
+                    bookService.AddBookAsync(title, author, isbn);
                     break;
                 case "2":
                     Console.Write("Enter EBook Title: ");
@@ -47,34 +47,34 @@ class Program
                     int fileSize = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Enter File Format: ");
                     string fileFormat = Console.ReadLine();
-                    bookService.AddEBook(eTitle, eAuthor, eISBN, fileSize, fileFormat);
+                    bookService.AddEBookAsync(eTitle, eAuthor, eISBN, fileSize, fileFormat);
                     break;
                 case "3":
-                    bookService.ListBooks();
+                    bookService.ListBooksAsync();
                     break;
                 case "4":
                     Console.Write("Enter Member Name: ");
                     string memberName = Console.ReadLine();
                     Console.Write("Enter Age: ");
                     int age = Convert.ToInt32(Console.ReadLine());
-                    memberService.RegisterMember(memberName, age);
+                    memberService.RegisterMemberAsync(memberName, age);
                     break;
                 case "5":
-                    memberService.ListMembers();
+                    memberService.ListMembersAsync();
                     break;
                 case "6":
                     Console.Write("Enter Member ID: ");
                     int memberId = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Enter Book ID: ");
                     int bookId = Convert.ToInt32(Console.ReadLine());
-                    borrowService.BorrowBook(memberId, bookId);
+                    borrowService.BorrowBookAsync(memberId, bookId);
                     break;
                 case "7":
                     Console.Write("Enter Member ID: ");
                     int mId = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Enter Book ID: ");
                     int bId = Convert.ToInt32(Console.ReadLine());
-                    borrowService.ReturnBook(mId, bId);
+                    borrowService.ReturnBookAsync(mId, bId);
                     break;
                 case "8":
                     exit = true;

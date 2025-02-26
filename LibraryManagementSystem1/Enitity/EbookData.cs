@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem1.Enitity
 {
-     class Ebook
+     class EbookData
     {
         [Key]
         public int EbookId { get; set; }
         public int FileSize { get; set; }
         public string FileFormat { get; set; }
         public int BookId { get; set; }
-        public virtual Book Book { get; set; }
+        public virtual BookData Book { get; set; }
     }
 }

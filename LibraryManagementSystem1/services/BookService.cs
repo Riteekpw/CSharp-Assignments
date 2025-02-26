@@ -25,7 +25,7 @@ namespace LibraryManagementSystem1.services
             bookRepository = bookRepo;
         }
 
-        public void AddBook(string title, string author, string isbn)
+        public async Task AddBookAsync(string title, string author, string isbn)
         {
             var book = new Book
             {
@@ -37,12 +37,12 @@ namespace LibraryManagementSystem1.services
                 IsDeleted = false
             };
 
-            bookRepository.Add(book);
-            bookRepository.SaveChanges();
+            await bookRepository.AddAsync(book);
+            await bookRepository.SaveChangesAsync();
             Console.WriteLine("Physical book added successfully.");
         }
 
-        public void AddEBook(string title, string author, string isbn, int fileSize, string fileFormat)
+        public async Task AddEBookAsync(string title, string author, string isbn, int fileSize, string fileFormat)
         {
             var book = new Book
             {
@@ -54,8 +54,8 @@ namespace LibraryManagementSystem1.services
                 IsDeleted = false
             };
 
-            bookRepository.Add(book);
-            bookRepository.SaveChanges();
+            await bookRepository.AddAsync(book);
+            await bookRepository.SaveChangesAsync();
 
             var ebook = new Ebook
             {
@@ -69,9 +69,9 @@ namespace LibraryManagementSystem1.services
             Console.WriteLine("EBook added successfully.");
         }
 
-        public void ListBooks()
+        public async Task ListBooksAsync()
         {
-            var books = bookRepository.GetAll();
+            var books = await bookRepository.GetAllAsync();
             Console.WriteLine("\nList of Books:");
             foreach (var book in books)
             {

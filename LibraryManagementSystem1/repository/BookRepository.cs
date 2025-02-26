@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LibraryManagementSystem1.data;
+using LibraryManagementSystem1.Enitity;
 using LibrayManagementSystem1.model;
 using Microsoft.EntityFrameworkCore;
 

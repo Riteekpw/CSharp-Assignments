@@ -8,7 +8,7 @@ namespace LibraryManagementSystem1.services
 {
     public interface IMemberService
     {
-        void RegisterMember(string name, int age);
-        void ListMembers();
+        Task RegisterMemberAsync(string name, int age);
+        Task ListMembersAsync();
     }
 }

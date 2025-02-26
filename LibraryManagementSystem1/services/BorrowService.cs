@@ -34,10 +34,10 @@ namespace LibraryManagementSystem1.services
             this.object3 = object3;
         }
 
-        public void BorrowBook(int memberId, int bookId)
+        public async Task BorrowBookAsync(int memberId, int bookId)
         {
-            var member = memberRepository.FindById(memberId);
-            var book = bookRepository.FindById(bookId);
+            var member = await memberRepository.FindByIdAsync(memberId);
+            var book = await bookRepository.FindByIdAsync(bookId);
 
             if (member == null)
             {
@@ -65,16 +65,16 @@ namespace LibraryManagementSystem1.services
                 BorrowedOn = DateTime.Now
             };
 
-            borrowRepository.Add(memberBook);
-            borrowRepository.SaveChanges();
+            await borrowRepository.AddAsync(memberBook);
+            await borrowRepository.SaveChangesAsync();
 
             Console.WriteLine("Book borrowed successfully.");
         }
 
-        public void ReturnBook(int memberId, int bookId)
+        public async Task ReturnBookAsync(int memberId, int bookId)
         {
-            var member = memberRepository.FindById(memberId);
-            var book = bookRepository.FindById(bookId);
+            var member = await memberRepository.FindByIdAsync(memberId);
+            var book = await bookRepository.FindByIdAsync(bookId);
 
             if (member == null || book == null)
             {
@@ -82,7 +82,7 @@ namespace LibraryManagementSystem1.services
                 return;
             }
 
-            var memberBook = borrowRepository.FindByMemberAndBook(memberId, bookId);
+            var memberBook = await borrowRepository.FindByMemberAndBookAsync(memberId, bookId);
             if (memberBook == null)
             {
                 Console.WriteLine("This book was not borrowed by the member.");
@@ -93,7 +93,7 @@ namespace LibraryManagementSystem1.services
             bookRepository.Update(book);
             memberBook.BookStatus = "returned";
             memberBook.ReturnedOn = DateTime.Now;
-            borrowRepository.SaveChanges();
+            await borrowRepository.SaveChangesAsync();
 
             Console.WriteLine("Book returned successfully.");
         }

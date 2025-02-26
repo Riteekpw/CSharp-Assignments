@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LibraryManagementSystem1.Enitity;
 using LibrayManagementSystem1.model;
 
 namespace LibraryManagementSystem1.repository
 {
-     public interface IBookRepository
+    public interface IBookRepository
     {
         Task AddAsync(Book book);
         Task<Book> FindByIdAsync(int bookId);

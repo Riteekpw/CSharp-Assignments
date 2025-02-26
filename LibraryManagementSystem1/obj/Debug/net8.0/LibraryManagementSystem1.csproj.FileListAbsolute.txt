@@ -151,3 +151,4 @@ C:\Users\riteekc\source\repos\LibraryManagementSystem1\obj\Debug\net8.0\refint\L
 C:\Users\riteekc\source\repos\LibraryManagementSystem1\obj\Debug\net8.0\LibraryManagementSystem1.pdb
 C:\Users\riteekc\source\repos\LibraryManagementSystem1\obj\Debug\net8.0\LibraryManagementSystem1.genruntimeconfig.cache
 C:\Users\riteekc\source\repos\LibraryManagementSystem1\obj\Debug\net8.0\ref\LibraryManagementSystem1.dll
+C:\Users\riteekc\source\repos\LibraryManagementSystem1\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
