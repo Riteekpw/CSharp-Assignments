@@ -12,7 +12,5 @@ namespace LibrayManagementSystem1.model
         [Key]
         public int LibrarianId { get; set; }
         public string LibrarianName { get; set; }
-
-        public virtual ICollection<BookRecord> BookRecords { get; set; } = new List<BookRecord>();
     }
 }

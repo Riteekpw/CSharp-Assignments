@@ -14,20 +14,30 @@ namespace LibraryManagementSystem1.services
         private  IBookRepository bookRepository;
         private  IMemberRepository memberRepository;
         private  IBorrowRepository borrowRepository;
-        private  LibraryDbContext context;
+        private  LibraryDbContext _context;
+        private IBookRepository object1;
+        private IMemberRepository object2;
+        private IBorrowRepository object3;
 
         public BorrowService()
         {
-            context = new LibraryDbContext();
-            bookRepository = new BookRepository(context);
-            memberRepository = new MemberRepository(context);
-            borrowRepository = new BorrowRepository(context);
+            _context = new LibraryDbContext();
+            bookRepository = new BookRepository(_context);
+            memberRepository = new MemberRepository(_context);
+            borrowRepository = new BorrowRepository(_context);
         }
 
-        public void BorrowBook(int memberId, int bookId)
+        public BorrowService(IBookRepository object1, IMemberRepository object2, IBorrowRepository object3)
         {
-            var member = memberRepository.FindById(memberId);
-            var book = bookRepository.FindById(bookId);
+            this.object1 = object1;
+            this.object2 = object2;
+            this.object3 = object3;
+        }
+
+        public async Task BorrowBookAsync(int memberId, int bookId)
+        {
+            var member = await memberRepository.FindByIdAsync(memberId);
+            var book = await bookRepository.FindByIdAsync(bookId);
 
             if (member == null)
             {
@@ -55,16 +65,16 @@ namespace LibraryManagementSystem1.services
                 BorrowedOn = DateTime.Now
             };
 
-            borrowRepository.Add(memberBook);
-            borrowRepository.SaveChanges();
+            await borrowRepository.AddAsync(memberBook);
+            await borrowRepository.SaveChangesAsync();
 
             Console.WriteLine("Book borrowed successfully.");
         }
 
-        public void ReturnBook(int memberId, int bookId)
+        public async Task ReturnBookAsync(int memberId, int bookId)
         {
-            var member = memberRepository.FindById(memberId);
-            var book = bookRepository.FindById(bookId);
+            var member = await memberRepository.FindByIdAsync(memberId);
+            var book = await bookRepository.FindByIdAsync(bookId);
 
             if (member == null || book == null)
             {
@@ -72,7 +82,7 @@ namespace LibraryManagementSystem1.services
                 return;
             }
 
-            var memberBook = borrowRepository.FindByMemberAndBook(memberId, bookId);
+            var memberBook = await borrowRepository.FindByMemberAndBookAsync(memberId, bookId);
             if (memberBook == null)
             {
                 Console.WriteLine("This book was not borrowed by the member.");
@@ -83,7 +93,7 @@ namespace LibraryManagementSystem1.services
             bookRepository.Update(book);
             memberBook.BookStatus = "returned";
             memberBook.ReturnedOn = DateTime.Now;
-            borrowRepository.SaveChanges();
+            await borrowRepository.SaveChangesAsync();
 
             Console.WriteLine("Book returned successfully.");
         }

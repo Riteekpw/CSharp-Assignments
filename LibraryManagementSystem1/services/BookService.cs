@@ -12,15 +12,20 @@ namespace LibraryManagementSystem1.services
     public class BookService : IBookService
     {
         private  IBookRepository bookRepository;
-        private  LibraryDbContext context;
+        private  LibraryDbContext _context;
 
         public BookService()
         {
-            context = new LibraryDbContext();
-            bookRepository = new BookRepository(context);
+            _context = new LibraryDbContext();
+            bookRepository = new BookRepository(_context);
         }
 
-        public void AddBook(string title, string author, string isbn)
+        public BookService(IBookRepository bookRepo)
+        {
+            bookRepository = bookRepo;
+        }
+
+        public async Task AddBookAsync(string title, string author, string isbn)
         {
             var book = new Book
             {
@@ -32,12 +37,12 @@ namespace LibraryManagementSystem1.services
                 IsDeleted = false
             };
 
-            bookRepository.Add(book);
-            bookRepository.SaveChanges();
+            await bookRepository.AddAsync(book);
+            await bookRepository.SaveChangesAsync();
             Console.WriteLine("Physical book added successfully.");
         }
 
-        public void AddEBook(string title, string author, string isbn, int fileSize, string fileFormat)
+        public async Task AddEBookAsync(string title, string author, string isbn, int fileSize, string fileFormat)
         {
             var book = new Book
             {
@@ -49,8 +54,8 @@ namespace LibraryManagementSystem1.services
                 IsDeleted = false
             };
 
-            bookRepository.Add(book);
-            bookRepository.SaveChanges();
+            await bookRepository.AddAsync(book);
+            await bookRepository.SaveChangesAsync();
 
             var ebook = new Ebook
             {
@@ -59,14 +64,14 @@ namespace LibraryManagementSystem1.services
                 BookId = book.BookId
             };
 
-            context.Ebooks.Add(ebook);
-            context.SaveChanges();
+            _context.Ebooks.Add(ebook);
+            _context.SaveChanges();
             Console.WriteLine("EBook added successfully.");
         }
 
-        public void ListBooks()
+        public async Task ListBooksAsync()
         {
-            var books = bookRepository.GetAll();
+            var books = await bookRepository.GetAllAsync();
             Console.WriteLine("\nList of Books:");
             foreach (var book in books)
             {
