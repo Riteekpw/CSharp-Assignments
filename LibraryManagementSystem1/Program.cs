@@ -1,15 +1,62 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System;
 using LibraryManagementSystem1;
+using LibraryManagementSystem1.data;
+using LibraryManagementSystem1.repository;
 using LibraryManagementSystem1.services;
 using LibrayManagementSystem1.model;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
 class Program
 {
-    static void Main()
+    static async Task Main(string[] args)
     {
-        IBookService bookService = new BookService();
-        IMemberService memberService = new MemberService();
-        IBorrowService borrowService = new BorrowService();
+
+        //Log.Logger = new LoggerConfiguration()
+        //    .MinimumLevel.Information()
+        //    .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
+        //    .CreateLogger();
+
+        //Log.Logger = new LoggerConfiguration()
+        //    .MinimumLevel.Information()
+        //    .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
+        //    .CreateLogger();
+
+        Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()  // Set the minimum log level (Information, in your case)
+    .WriteTo.Console()           // Log to the console
+    .CreateLogger();
+
+        var services = new ServiceCollection();
+
+        services.AddLogging(loggingBuilder =>
+        {
+            loggingBuilder.ClearProviders();
+            loggingBuilder.AddSerilog();
+        });
+
+        services.AddDbContext<LibraryDbContext>(options =>
+        options.UseSqlServer("Server=P2021-PC00312\\SQLEXPRESS;Database=Library;Trusted_Connection=True;TrustServerCertificate=True"));
+
+        services.AddSingleton<IBookService, BookService>();
+        services.AddSingleton<IMemberService, MemberService>();
+        services.AddSingleton<IBorrowService, BorrowService>();
+
+        services.AddSingleton<IBookRepository, BookRepository>();
+        services.AddSingleton<IMemberRepository, MemberRepository>();
+        services.AddSingleton<IBorrowRepository, BorrowRepository>();
+
+        // 3. Build the service provider from the service collection.
+        var serviceProvider = services.BuildServiceProvider();
+
+        // 4. Resolve the services that you need.
+        var bookService = serviceProvider.GetRequiredService<IBookService>();
+        var memberService = serviceProvider.GetRequiredService<IMemberService>();
+        var borrowService = serviceProvider.GetRequiredService<IBorrowService>();
+
 
         bool exit = false;
         while (!exit)

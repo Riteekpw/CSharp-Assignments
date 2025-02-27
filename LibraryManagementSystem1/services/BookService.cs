@@ -6,18 +6,25 @@ using System.Threading.Tasks;
 using LibraryManagementSystem1.data;
 using LibraryManagementSystem1.repository;
 using LibrayManagementSystem1.model;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace LibraryManagementSystem1.services
 {
+    
     public class BookService : IBookService
     {
+       // private readonly Microsoft.Extensions.Logging.ILogger _logger;
+        private readonly ILogger<BookService> _logger;
         private  IBookRepository bookRepository;
         private  LibraryDbContext _context;
 
-        public BookService()
+        public BookService(ILogger<BookService> logger,IBookRepository bookRepository, LibraryDbContext context)
         {
-            _context = new LibraryDbContext();
-            bookRepository = new BookRepository(_context);
+            _logger = logger;
+            _context = context;
+            this.bookRepository = bookRepository;
         }
 
         public BookService(IBookRepository bookRepo)
@@ -27,6 +34,7 @@ namespace LibraryManagementSystem1.services
 
         public async Task AddBookAsync(string title, string author, string isbn)
         {
+            _logger.LogInformation("invalid");
             var book = new Book
             {
                 Title = title,
@@ -40,6 +48,7 @@ namespace LibraryManagementSystem1.services
             await bookRepository.AddAsync(book);
             await bookRepository.SaveChangesAsync();
             Console.WriteLine("Physical book added successfully.");
+            _logger.LogInformation("Sucess");
         }
 
         public async Task AddEBookAsync(string title, string author, string isbn, int fileSize, string fileFormat)

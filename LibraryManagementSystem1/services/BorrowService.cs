@@ -14,24 +14,15 @@ namespace LibraryManagementSystem1.services
         private  IBookRepository bookRepository;
         private  IMemberRepository memberRepository;
         private  IBorrowRepository borrowRepository;
-        private  LibraryDbContext _context;
-        private IBookRepository object1;
-        private IMemberRepository object2;
-        private IBorrowRepository object3;
 
-        public BorrowService()
-        {
-            _context = new LibraryDbContext();
-            bookRepository = new BookRepository(_context);
-            memberRepository = new MemberRepository(_context);
-            borrowRepository = new BorrowRepository(_context);
-        }
 
-        public BorrowService(IBookRepository object1, IMemberRepository object2, IBorrowRepository object3)
+
+        public BorrowService(IBookRepository bookRepository, IMemberRepository memberRepository, IBorrowRepository borrowRepository, LibraryDbContext context)
         {
-            this.object1 = object1;
-            this.object2 = object2;
-            this.object3 = object3;
+            this.bookRepository = bookRepository;
+            this.memberRepository = memberRepository;
+            this.borrowRepository = borrowRepository;
+
         }
 
         public async Task BorrowBookAsync(int memberId, int bookId)
