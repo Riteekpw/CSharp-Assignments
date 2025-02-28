@@ -48,7 +48,7 @@ namespace LibraryManagementSystem1.services
             await bookRepository.AddAsync(book);
             await bookRepository.SaveChangesAsync();
             Console.WriteLine("Physical book added successfully.");
-            _logger.LogInformation("Sucess");
+            _logger.LogInformation($"Sucess {title} added");
         }
 
         public async Task AddEBookAsync(string title, string author, string isbn, int fileSize, string fileFormat)
