@@ -9,9 +9,9 @@ namespace LibraryManagementSystem1.repository
 {
     public interface IMemberRepository
     {
-        void Add(Member member);
-        Member FindById(int memberId);
-        IEnumerable<Member> GetAll();
-        void SaveChanges();
+        Task AddAsync(Member member);
+        Task<Member> FindByIdAsync(int memberId);
+        Task<IEnumerable<Member>> GetAllAsync();
+        Task SaveChangesAsync();
     }
 }

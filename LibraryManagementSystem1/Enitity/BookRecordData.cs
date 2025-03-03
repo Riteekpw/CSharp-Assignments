@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibrayManagementSystem1.model
+namespace LibraryManagementSystem1.Enitity
 {
-    public class BookRecord
+     class BookRecordData
     {
         [Key]
         public int TransactionId { get; set; }
@@ -17,8 +17,5 @@ namespace LibrayManagementSystem1.model
         public DateTime ReturnedOn { get; set; }
         public string BookStatus { get; set; } = "issued";
         public int MappingId { get; set; }
-
-        public virtual MemberBook MemberBook { get; set; }
-        public virtual LibrarianInfo Librarian { get; set; }
     }
 }
