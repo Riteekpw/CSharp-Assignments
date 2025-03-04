@@ -1,13 +1,14 @@
-﻿using LibraryManagementWebApp.Entity;
+﻿using System.Net;
+using LibraryManagementWebApp.Entity;
 using LibraryManagementWebApp.Repository;
 
 namespace LibraryManagementWebApp.Services
 {
-    public class BookService
+    public class BookService : IBookService
     {
-        private readonly BookRepository _bookRepository;
+        private readonly IBookRepository _bookRepository;
 
-        public BookService(BookRepository bookRepository)
+        public BookService(IBookRepository bookRepository)
         {
             _bookRepository = bookRepository;
         }
@@ -15,6 +16,11 @@ namespace LibraryManagementWebApp.Services
         public async Task<List<Book>> GetBooksAsync()
         {
             return await _bookRepository.GetAllAsync();
+        }
+
+        public async Task<Book> GetBookByIdAsync(int bookId)
+        {
+            return await _bookRepository.FindByIdAsync(bookId);
         }
 
         public async Task AddBookAsync(Book book)

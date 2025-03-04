@@ -44,9 +44,8 @@ namespace LibraryManagementWebApp.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("IsEbook")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("IsEBook")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -162,7 +161,7 @@ namespace LibraryManagementWebApp.Migrations
 
                     b.HasIndex("MemberId");
 
-                    b.ToTable("MembersMapToBook");
+                    b.ToTable("MemberMapToBook");
                 });
 
             modelBuilder.Entity("LibraryManagementWebApp.Entity.EBook", b =>

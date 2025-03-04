@@ -23,7 +23,7 @@ namespace LibraryManagementWebApp.Entity
 
         public string BookStatus { get; set; } = "issued"; // or "returned"
 
-        public int LibrarianId {  get; set; }
+        public int LibrarianId { get; set; } = 1;
   
         public Librarian Librarian { get; set; }    
     }

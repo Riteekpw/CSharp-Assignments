@@ -18,7 +18,7 @@ namespace LibraryManagementWebApp.Entity
 
         public bool IsAvailable { get; set; } = true;
 
-        public string IsEBook { get; set; } = "false";
+        public bool IsEBook { get; set; } = false;
 
         public bool IsDeleted { get; set; } = false;
 

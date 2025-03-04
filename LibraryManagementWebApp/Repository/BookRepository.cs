@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagementWebApp.Repository
 {
-    public class BookRepository
+    public class BookRepository : IBookRepository
     {
         private readonly LibraryContext _context;
 
@@ -23,5 +23,22 @@ namespace LibraryManagementWebApp.Repository
             await _context.Books.AddAsync(book);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<Book> FindByIdAsync(int bookId)
+        {
+            return await _context.Books.Where(BK => BK.BookId == bookId).FirstOrDefaultAsync();
+        }
+
+        public void Update(Book book)
+        {
+            _context.Books.Update(book);
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
+
+      
     }
 }

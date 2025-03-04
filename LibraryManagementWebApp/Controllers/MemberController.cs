@@ -1,83 +1,66 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using LibraryManagementWebApp.Entity;
+using LibraryManagementWebApp.Model;
+using LibraryManagementWebApp.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryManagementWebApp.Controllers
 {
-    public class MemberController : Controller
+    [ApiController]
+    public class MemberController : ControllerBase
     {
-        // GET: MemberController
-        public ActionResult Index()
+        private readonly IMemberService _memberService;
+
+        public MemberController(IMemberService memberService)
         {
-            return View();
+            _memberService = memberService;
         }
 
-        // GET: MemberController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: MemberController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: MemberController/Create
+        [Route("register")]
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> RegisterMember([FromBody] MemberModel member)
         {
-            try
+            if (member == null || string.IsNullOrWhiteSpace(member.Name) || member.Age <= 0)
             {
-                return RedirectToAction(nameof(Index));
+                return BadRequest("Invalid member data.");
             }
-            catch
-            {
-                return View();
-            }
+
+            await _memberService.RegisterMemberAsync(member.Name, member.Age);
+            return Ok($"Member {member.Name} registered successfully.");
+
         }
 
-        // GET: MemberController/Edit/5
-        public ActionResult Edit(int id)
+
+
+        [Route("list")]
+        [HttpGet]
+        public async Task<ActionResult<List<MemberModel>>> GetMembers()
         {
-            return View();
+                var members = await _memberService.GetAllMembersAsync();
+                return Ok(members);
         }
 
-        // POST: MemberController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+
+        [Route("getmember/{id}")]
+        [HttpGet]
+        public async Task<ActionResult<MemberModel>> GetMemberById(int id)
         {
-            try
+            var member = await _memberService.GetMemberByIdAsync(id);
+
+            if (member == null)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound(); 
             }
-            catch
+
+            var memberModel = new MemberModel
             {
-                return View();
-            }
+                MemberId = member.MemberId,
+                Name = member.Name,
+                Age = member.Age
+            };
+
+            return Ok(memberModel); 
         }
 
-        // GET: MemberController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: MemberController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
+
