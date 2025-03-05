@@ -20,4 +20,5 @@ namespace LibrayManagementSystem1.model
         public virtual Book Book { get; set; }
     
     }
+
 }

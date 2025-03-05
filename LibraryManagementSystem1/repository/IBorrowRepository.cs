@@ -9,9 +9,8 @@ namespace LibraryManagementSystem1.repository
 {
     public interface IBorrowRepository
     {
-        MemberBook FindByMemberAndBook(int memberId, int bookId);
-        void Add(MemberBook memberBook);
-        void Remove(MemberBook memberBook);
-        void SaveChanges();
+        Task<MemberBook> FindByMemberAndBookAsync(int memberId, int bookId);
+        Task AddAsync(MemberBook memberBook);
+        Task SaveChangesAsync();
     }
 }
