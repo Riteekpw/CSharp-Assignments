@@ -9,5 +9,7 @@ namespace LibraryManagementWebApp.Repository
         Task<Book> FindByIdAsync(int bookId);
         void Update(Book book);
         Task SaveChangesAsync();
+        Task AddEBookAsync(EBook ebook);
+        Task DeleteBookAsync(Book book);
     }
 }

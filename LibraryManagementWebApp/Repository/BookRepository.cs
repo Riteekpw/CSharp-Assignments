@@ -39,6 +39,16 @@ namespace LibraryManagementWebApp.Repository
             await _context.SaveChangesAsync();
         }
 
-      
+        public async Task AddEBookAsync(EBook ebook)
+        {
+            await _context.EBooks.AddAsync(ebook);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteBookAsync(Book book)
+        {
+            _context.Books.Remove(book);
+            await _context.SaveChangesAsync();
+        }
     }
 }

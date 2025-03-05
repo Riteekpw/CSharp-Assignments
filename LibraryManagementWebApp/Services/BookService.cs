@@ -27,5 +27,21 @@ namespace LibraryManagementWebApp.Services
         {
             await _bookRepository.AddAsync(book);
         }
+
+        public async Task AddEBookAsync(EBook ebook)
+        {
+            await _bookRepository.AddEBookAsync(ebook);
+        }
+
+        public async Task DeleteBook(int id)
+        {
+            var book = await _bookRepository.FindByIdAsync(id);
+            await _bookRepository.DeleteBookAsync(book);
+        }
+
+        public async Task UpdateBookAsync(Book book)
+        {
+            _bookRepository.Update(book);
+        }
     }
 }

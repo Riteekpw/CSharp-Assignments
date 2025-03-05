@@ -14,7 +14,7 @@ namespace LibraryManagementWebApp.Controllers
             _borrowService = borrowService;
         }
 
-        [Route("borrow-book")]
+        [Route("book/borrow")]
         [HttpPost]
         public async Task<ActionResult> BorrowBook([FromQuery] int memberId, [FromQuery] int bookId)
         {
@@ -25,7 +25,7 @@ namespace LibraryManagementWebApp.Controllers
         }
 
 
-        [Route("return-book")]
+        [Route("book/return")]
         [HttpPost]
         public async Task<ActionResult> ReturnBook([FromQuery] int memberId, [FromQuery] int bookId)
         {

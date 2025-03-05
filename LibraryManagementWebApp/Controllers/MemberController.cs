@@ -15,7 +15,7 @@ namespace LibraryManagementWebApp.Controllers
             _memberService = memberService;
         }
 
-        [Route("register")]
+        [Route("member/register")]
         [HttpPost]
         public async Task<ActionResult> RegisterMember([FromBody] MemberModel member)
         {
@@ -31,16 +31,22 @@ namespace LibraryManagementWebApp.Controllers
 
 
 
-        [Route("list")]
+        [Route("member/list")]
         [HttpGet]
         public async Task<ActionResult<List<MemberModel>>> GetMembers()
         {
                 var members = await _memberService.GetAllMembersAsync();
+
+                if (members == null)
+                {
+                   return NotFound();
+                }
+
                 return Ok(members);
         }
 
 
-        [Route("getmember/{id}")]
+        [Route("member/getmember/{id}")]
         [HttpGet]
         public async Task<ActionResult<MemberModel>> GetMemberById(int id)
         {

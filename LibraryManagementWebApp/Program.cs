@@ -16,10 +16,13 @@ public class Program
         builder.Services.AddScoped<IBookService, BookService>();
         builder.Services.AddScoped<IMemberService, MemberService>();
         builder.Services.AddScoped<IBorrowService, BorrowService>();
+        builder.Services.AddScoped<LibrarianService, LibrarianService>();
 
         builder.Services.AddScoped<IBookRepository, BookRepository>();
         builder.Services.AddScoped<IMemberRepository, MemberRepository>();
         builder.Services.AddScoped<IBorrowRepository, BorrowRepository>();
+        builder.Services.AddScoped<LibrarianRepository, LibrarianRepository>();
+
 
 
         builder.Services.AddControllers();
