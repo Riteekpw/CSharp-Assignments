@@ -18,9 +18,15 @@ namespace LibraryManagementWebApp.Controllers
         [HttpPost]
         public async Task<ActionResult> BorrowBook([FromQuery] int memberId, [FromQuery] int bookId)
         {
-
+            try
+            {
                 await _borrowService.BorrowBookAsync(memberId, bookId);
                 return Ok("Book borrowed successfully.");
+            }
+            catch(Exception e)
+            {
+                return NotFound();
+            }
 
         }
 
@@ -29,8 +35,16 @@ namespace LibraryManagementWebApp.Controllers
         [HttpPost]
         public async Task<ActionResult> ReturnBook([FromQuery] int memberId, [FromQuery] int bookId)
         {
+            try
+            {
                 await _borrowService.ReturnBookAsync(memberId, bookId);
                 return Ok("Book returned successfully.");
+            }
+            catch(Exception e)
+            {
+                return NotFound();
+            }
+                
         }
     }
 }

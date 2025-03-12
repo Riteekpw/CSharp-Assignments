@@ -1,5 +1,4 @@
 ﻿
-
 using LibraryManagementWebApp.Entity;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,10 +11,14 @@ namespace LibraryManagementWebApp.Data
         public DbSet<Member> Members { get; set; } 
         public DbSet<MemberMapToBook> MemberMapToBook { get; set; }
         public DbSet<Librarian> Librarian { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public LibraryContext(DbContextOptions<LibraryContext> options) : base(options)
         {
         }
 
+        public LibraryContext()
+        {
+        }
     }
 }

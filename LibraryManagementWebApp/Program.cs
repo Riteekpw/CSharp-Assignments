@@ -1,13 +1,27 @@
+using LibraryManagementWebApp.AuthenticationFilter;
 using LibraryManagementWebApp.Data;
 using LibraryManagementWebApp.Repository;
 using LibraryManagementWebApp.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
+
 
 public class Program
 {
     public static void Main(string[] args)
     {
+
         var builder = WebApplication.CreateBuilder(args);
+
+        builder.Host.UseSerilog((context, config) =>
+        {
+            config
+                .Enrich.FromLogContext() 
+                .Enrich.WithThreadId()
+                .WriteTo.Console()
+                .WriteTo.File("logs/myapp.log", rollingInterval: RollingInterval.Day);
+        });
 
 
         builder.Services.AddDbContext<LibraryContext>(options =>
@@ -27,6 +41,16 @@ public class Program
 
         builder.Services.AddControllers();
 
+
+
+
+        builder.Services.AddAuthorization(options =>
+        {
+            options.AddPolicy("MemberPolicy", policy => policy.RequireRole("Member"));
+            options.AddPolicy("LibrarianPolicy", policy => policy.RequireRole("Librarian"));
+        });
+
+
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
@@ -45,7 +69,14 @@ public class Program
         });
 
 
+       // builder.Services.AddTransient<BasicAuthAttribute>();
+
+
+
         var app = builder.Build();
+
+        //for serilog
+        app.UseSerilogRequestLogging();
 
 
         if (app.Environment.IsDevelopment())
@@ -60,8 +91,10 @@ public class Program
 
         app.UseCors("AllowAll");
 
+        app.UseAuthentication();
         app.UseAuthorization();
 
+        app.UseMiddleware<UsernameLoggingMiddleware>();
 
         app.MapControllers();
 

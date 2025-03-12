@@ -1,4 +1,5 @@
-﻿using LibraryManagementWebApp.Entity;
+﻿using LibraryManagementWebApp.AuthenticationFilter;
+using LibraryManagementWebApp.Entity;
 using LibraryManagementWebApp.Model;
 using LibraryManagementWebApp.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +32,7 @@ namespace LibraryManagementWebApp.Controllers
 
             var bookModels = books.Select(b => new BookModel
             {
+                BookId = b.BookId,
                 Title = b.Title,
                 Author = b.Author,
                 ISBN = b.ISBN,

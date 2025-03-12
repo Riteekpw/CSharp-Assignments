@@ -20,6 +20,12 @@ namespace LibraryManagementWebApp.Controllers
         public async Task<ActionResult<LibrarianModel>> GetLibrarianInfo()
         {
             var librarian = await librarianService.getLibrarianAsync();
+
+            if(librarian == null)
+            {
+                return NotFound();
+            }
+
             return Ok(librarian);
         }
     }

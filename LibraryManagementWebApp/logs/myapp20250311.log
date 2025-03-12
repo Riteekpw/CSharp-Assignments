@@ -1,0 +1,30 @@
+2025-03-11 18:12:53.619 +05:30 [INF] Now listening on: https://localhost:7247
+2025-03-11 18:12:53.657 +05:30 [INF] Now listening on: http://localhost:5233
+2025-03-11 18:12:53.734 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-11 18:12:53.737 +05:30 [INF] Hosting environment: Development
+2025-03-11 18:12:53.737 +05:30 [INF] Content root path: D:\CSharp-Projects\LibraryManagementWebApp
+2025-03-11 18:12:54.227 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7247/swagger/index.html - null null
+2025-03-11 18:12:54.479 +05:30 [INF] HTTP GET /swagger/index.html responded 200 in 73.2670 ms
+2025-03-11 18:12:54.490 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7247/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-11 18:12:54.493 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7247/_vs/browserLink - null null
+2025-03-11 18:12:54.494 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7247/swagger/index.html - 200 null text/html;charset=utf-8 278.3655ms
+2025-03-11 18:12:54.504 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7247/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 14.4693ms
+2025-03-11 18:12:54.540 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7247/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.9352ms
+2025-03-11 18:12:54.598 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7247/swagger/v1/swagger.json - null null
+2025-03-11 18:12:54.619 +05:30 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 18.0437 ms
+2025-03-11 18:12:54.623 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7247/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 25.521ms
+2025-03-11 19:12:55.645 +05:30 [INF] Now listening on: https://localhost:7247
+2025-03-11 19:12:55.684 +05:30 [INF] Now listening on: http://localhost:5233
+2025-03-11 19:12:55.768 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-11 19:12:55.769 +05:30 [INF] Hosting environment: Development
+2025-03-11 19:12:55.770 +05:30 [INF] Content root path: D:\CSharp-Projects\LibraryManagementWebApp
+2025-03-11 19:12:57.086 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7247/swagger/index.html - null null
+2025-03-11 19:12:57.570 +05:30 [INF] HTTP GET /swagger/index.html responded 200 in 115.0884 ms
+2025-03-11 19:12:57.577 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7247/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-11 19:12:57.580 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7247/_vs/browserLink - null null
+2025-03-11 19:12:57.599 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7247/swagger/index.html - 200 null text/html;charset=utf-8 523.8499ms
+2025-03-11 19:12:57.607 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7247/_framework/aspnetcore-browser-refresh.js - 200 16531 application/javascript; charset=utf-8 29.6747ms
+2025-03-11 19:12:57.657 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7247/_vs/browserLink - 200 null text/javascript; charset=UTF-8 77.5849ms
+2025-03-11 19:12:57.720 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7247/swagger/v1/swagger.json - null null
+2025-03-11 19:12:57.751 +05:30 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 25.8409 ms
+2025-03-11 19:12:57.755 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7247/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 35.5854ms

@@ -1,11 +1,14 @@
-﻿using LibraryManagementWebApp.Entity;
+﻿using LibraryManagementWebApp.AuthenticationFilter;
+using LibraryManagementWebApp.Entity;
 using LibraryManagementWebApp.Model;
 using LibraryManagementWebApp.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryManagementWebApp.Controllers
 {
     [ApiController]
+    [ServiceFilter(typeof(BasicAuthAttribute))]
     public class MemberController : ControllerBase
     {
         private readonly IMemberService _memberService;
