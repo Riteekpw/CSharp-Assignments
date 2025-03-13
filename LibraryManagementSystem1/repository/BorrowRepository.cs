@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LibraryManagementSystem1.data;
 using LibrayManagementSystem1.model;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagementSystem1.repository
 {
@@ -17,24 +18,21 @@ namespace LibraryManagementSystem1.repository
             this.context = context;
         }
 
-        public MemberBook FindByMemberAndBook(int memberId, int bookId)
+        public async Task<MemberBook> FindByMemberAndBookAsync(int memberId, int bookId)
         {
-            return context.MemberBooks.FirstOrDefault(mb => mb.MemberId == memberId && mb.BookId == bookId);
+            return await context.MemberBooks.Where(mb => mb.MemberId == memberId && mb.BookId == bookId).FirstOrDefaultAsync();
         }
 
-        public void Add(MemberBook memberBook)
+        public async Task AddAsync(MemberBook memberBook)
         {
-            context.MemberBooks.Add(memberBook);
+            await context.MemberBooks.AddAsync(memberBook);
         }
 
-        public void Remove(MemberBook memberBook)
-        {
-            context.MemberBooks.Remove(memberBook);
-        }
 
-        public void SaveChanges()
+
+        public async Task SaveChangesAsync()
         {
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
     }
 }
